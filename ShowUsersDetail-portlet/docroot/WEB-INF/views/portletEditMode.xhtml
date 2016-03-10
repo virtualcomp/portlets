@@ -1,0 +1,24 @@
+<?xml version="1.0"?>
+
+<f:view xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:c="http://java.sun.com/jsp/jstl/core"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:p="http://primefaces.org/ui"
+	xmlns:ui="http://java.sun.com/jsf/facelets">
+	<h:head />
+	<h:body>
+		<h:outputText value="#{i18n['ShowUsersDetail-hello-world']} edit mode" />
+		<h:form id="f2" styleClass="aui-form">
+			<p:messages autoUpdate="true" />
+			<!-- p:growl id="msgs" showDetail="true" / -->
+
+			<h:panelGrid columns="2" cellpadding="5">
+				<p:outputLabel value="Email:" for="email" />
+				<p:inputText id="email" value="#{usersModelBean.emailAddress}" />
+				<h:commandButton id="submit" value="Submit" styleClass="btn btn-default" action="#{usersModelBean.emailSubmit}" />
+					
+			</h:panelGrid>
+			</h:form>
+	</h:body>
+</f:view>

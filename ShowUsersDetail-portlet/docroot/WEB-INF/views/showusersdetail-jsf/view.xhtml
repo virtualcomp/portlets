@@ -1,0 +1,119 @@
+<?xml version="1.0"?>
+
+<f:view xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:c="http://java.sun.com/jsp/jstl/core"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:alloy="http://liferay.com/faces/alloy"
+	xmlns:p="http://primefaces.org/ui">
+	<h:head />
+	<h:body>
+
+		<h:form id="f1" styleClass="aui-form">
+			<!-- is not working yet h:messages globalOnly="true" layout="table" / -->
+			<p:growl id="msgs" showDetail="true" />
+
+
+			<p:panelGrid style="margin-top:20px">
+				<p:row>
+					<p:column rowspan="3">
+						<img id="portrait01"
+							src="#{usersModelBean.selectedUserPortraitURL}"
+							style="width: 100px;" />
+					</p:column>
+					<p:column>
+						<h3>
+							<h:outputText id="firstName" required="true"
+								value="#{usersModelBean.selectedUser.fullName}" />
+						</h3>
+						<p:separator />
+					</p:column>
+				</p:row>
+				<p:row>
+					<p:column>
+						<h2>
+							<h:outputText id="department" required="true"
+								value="#{usersModelBean.selectedUser.department}" />
+						</h2>
+
+					</p:column>
+
+				</p:row>
+				<p:row>
+
+
+				</p:row>
+			</p:panelGrid>
+
+
+
+
+
+			<h3 style="margin-top: 0">#{i18n['personal']}</h3>
+
+			<h:panelGrid columns="2" cellpadding="5">
+
+				<p:outputLabel for="firstName" value="#{i18n['first-name']}:" />
+				<h:outputText id="firstName" required="true"
+					value="#{usersModelBean.selectedUser.firstName}">
+					<h:message for="firstName" />
+				</h:outputText>
+
+				<p:outputLabel for="lastName" value="#{i18n['last-name']}:" />
+				<h:outputText id="lastName"
+					value="#{usersModelBean.selectedUser.fullName}">
+					<h:message for="lastName" />
+				</h:outputText>
+
+				<p:outputLabel for="emailAddress" value="#{i18n['email-address']}:" />
+				<h:outputText id="emailAddress"
+					value="#{usersModelBean.selectedUser.displayEmailAddress}">
+					<h:message for="emailAddress" />
+				</h:outputText>
+
+				<p:outputLabel for="jobTitle" value="#{i18n['job-title']}:" />
+				<h:outputText id="jobTitle"
+					value="#{usersModelBean.selectedUser.jobTitle}">
+					<h:message for="jobTitle" />
+				</h:outputText>
+
+				<img id="portrait01" src="#{usersModelBean.selectedUserPortraitURL}"
+					style="width: 100px;" />
+
+			</h:panelGrid>
+		</h:form>
+
+
+
+
+
+		<!-- h:form>
+
+			<h:messages globalOnly="true" />
+
+			<p:panelGrid columns="2">
+				
+
+				<h:outputText value="Name:" />
+				<h:outputText value="#{usersModelBean.selectedUser.fullName}" />
+
+				<h:outputText value="Gender:" />
+				<h:outputText
+					value="#{usersModelBean.selectedUser.female ? 'GIRL' : 'MAN'}" />
+
+				<h:outputText value="Email:" />
+				<h:outputText
+					value="#{usersModelBean.selectedUser.displayEmailAddress}" />
+
+				<h:outputText value="Number:" />
+				<h:outputText value="#{usersModelBean.selectedUser.phones}" />
+
+				<h:outputLabel value="COMPANY ID :"></h:outputLabel>
+				<h:outputLabel value="#{usersModelBean.companyId}"></h:outputLabel>
+			</p:panelGrid>
+
+
+		</h:form -->
+	</h:body>
+</f:view>
