@@ -39,16 +39,26 @@
 
 					</p:column>
 
+
 				</p:row>
 				<p:row>
+					<p:column>
+						<h:outputText id="kontact" required="true"
+							value="#{usersModelBean.selectedUser.department}" />
 
+					</p:column>
 
 				</p:row>
+				<p:row>
+					<p:column>
+						<p:panel id="horizontal" header="#{i18n['more-details']}"
+							toggleable="true" toggleOrientation="horizontal">
+							<p:graphicImage name="resources/no_image.png" />
+							<h:outputText value="Po štúdiách na Lekárskej fakulte UPJŠ v Košiciach pracovala na internom oddelení Nemocnice Košice – Šaca. Pôsobila  ako ordinárka tamojšej angiologickej ambulancie a tiež ako zástupkyňa primára interného oddelenia pre lôžkovú časť." />
+						</p:panel>
+					</p:column>
+				</p:row>
 			</p:panelGrid>
-
-
-
-
 
 			<h3 style="margin-top: 0">#{i18n['personal']}</h3>
 
